@@ -18,11 +18,11 @@ print(response)
 
 userInfoURL = 'https://slack.com/api/users.list'
 
-headers = {
+headers2 = {
     'Authorization': f'Bearer {slack_token}'
 }
 
-users_list_response = requests.get(userInfoURL, headers=headers)
+users_list_response = requests.get(userInfoURL, headers=headers2)
 print(users_list_response.json())
 
 print()
