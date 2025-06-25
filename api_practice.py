@@ -1,8 +1,17 @@
 import requests
 import os
 
-url = 'https://slack.com/api/'
+url = 'https://slack.com/api/conversations.join'
 
-response = requests.post(url + 'users.users.list', {'token': os.environ.get('SLACK_KEY')})
+slack_token = os.environ.get('SLACK_KEY')
+
+headers = {
+    'Authorization': f'Bearer {slack_token}',
+    'Content-Type': 'application/json'
+}
+
+response = requests.post(url, headers=headers, json={'channel': 'C092GGPJ8GP'})
 
 print(response.json())
+print()
+print(response)
